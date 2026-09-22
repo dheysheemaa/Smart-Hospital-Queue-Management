@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Patient Registration | MediCare+</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/animation.css">
+
+</head>
+
+<body>
+
+<!-- ================= NAVBAR ================= -->
+
+<header class="navbar">
+
+    <nav>
+
+        <div class="logo">
+
+            <div class="logo-icon">
+                +
+            </div>
+
+            <div>
+
+                <h2>
+                    MediCare<span>+</span>
+                </h2>
+
+                <small>
+                    Smart Healthcare
+                </small>
+
+            </div>
+
+        </div>
+
+
+        <ul class="nav-links">
+
+            <li>
+                <a href="index.html">
+                    Home
+                </a>
+            </li>
+
+            <li>
+                <a href="about.html">
+                    About
+                </a>
+            </li>
+
+            <li>
+                <a href="index.html#services">
+                    Services
+                </a>
+            </li>
+
+            <li>
+                <a href="doctor.html">
+                    Doctors
+                </a>
+            </li>
+
+            <li>
+                <a href="dashboard.html">
+                    Queue
+                </a>
+            </li>
+
+            <li>
+                <a href="index.html#contact">
+                    Contact
+                </a>
+            </li>
+
+        </ul>
+
+
+        <div class="nav-actions">
+
+            <button
+                id="themeToggle"
+                class="theme-btn">
+
+                🌙
+
+            </button>
+
+        </div>
+
+    </nav>
+
+</header>
+
+
+<!-- ================= REGISTRATION PAGE ================= -->
+
+<main class="registration-page">
+
+
+    <!-- LEFT INFORMATION -->
+
+    <section class="registration-info">
+
+        <span class="hero-badge">
+            🏥 Patient Registration
+        </span>
+
+
+        <h1>
+
+            Start your healthcare
+            <span>journey.</span>
+
+        </h1>
+
+
+        <p>
+
+            Register your details to receive a digital
+            queue token and track your waiting time
+            without standing in a long queue.
+
+        </p>
+
+
+        <div class="registration-benefits">
+
+
+            <div class="benefit-item">
+
+                <div class="benefit-icon">
+                    🎟️
+                </div>
+
+                <div>
+
+                    <h3>
+                        Instant Token
+                    </h3>
+
+                    <p>
+                        Get your queue token immediately
+                        after registration.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="benefit-item">
+
+                <div class="benefit-icon">
+                    ⏱️
+                </div>
+
+                <div>
+
+                    <h3>
+                        Track Waiting Time
+                    </h3>
+
+                    <p>
+                        Know your estimated waiting time
+                        before consultation.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="benefit-item">
+
+                <div class="benefit-icon">
+                    🔒
+                </div>
+
+                <div>
+
+                    <h3>
+                        Simple & Secure
+                    </h3>
+
+                    <p>
+                        Your registration details are handled
+                        through the local hospital system.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+    <!-- REGISTRATION FORM -->
+
+    <section class="registration-card">
+
+        <div class="form-header">
+
+            <span>
+                STEP 1 OF 1
+            </span>
+
+            <h2>
+                Patient Details
+            </h2>
+
+            <p>
+                Please enter the patient's information below.
+            </p>
+
+        </div>
+
+
+        <form id="patientForm">
+
+
+            <!-- NAME -->
+
+            <div class="form-group">
+
+                <label for="name">
+                    Full Name
+                </label>
+
+                <input
+                    type="text"
+                    id="name"
+                    placeholder="Enter patient's full name"
+                    autocomplete="name"
+                    required>
+
+            </div>
+
+
+            <!-- AGE + GENDER -->
+
+            <div class="form-row">
+
+
+                <div class="form-group">
+
+                    <label for="age">
+                        Age
+                    </label>
+
+                    <input
+                        type="number"
+                        id="age"
+                        placeholder="Age"
+                        min="1"
+                        max="120"
+                        required>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="gender">
+                        Gender
+                    </label>
+
+                    <select id="gender" required>
+
+                        <option value="">
+                            Select Gender
+                        </option>
+
+                        <option value="Male">
+                            Male
+                        </option>
+
+                        <option value="Female">
+                            Female
+                        </option>
+
+                        <option value="Other">
+                            Other
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+            </div>
+
+
+            <!-- MOBILE -->
+
+            <div class="form-group">
+
+                <label for="mobile">
+                    Mobile Number
+                </label>
+
+                <input
+                    type="tel"
+                    id="mobile"
+                    placeholder="Enter 10-digit mobile number"
+                    maxlength="10"
+                    pattern="[0-9]{10}"
+                    required>
+
+            </div>
+
+
+            <!-- DEPARTMENT -->
+
+            <div class="form-group">
+
+                <label for="department">
+                    Department
+                </label>
+
+                <select id="department" required>
+
+                    <option value="">
+                        Select Department
+                    </option>
+
+                    <option value="General">
+                        General Medicine
+                    </option>
+
+                    <option value="ENT">
+                        ENT
+                    </option>
+
+                    <option value="Dental">
+                        Dental
+                    </option>
+
+                    <option value="Eye">
+                        Ophthalmology
+                    </option>
+
+                    <option value="Cardiology">
+                        Cardiology
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <!-- EMERGENCY LEVEL -->
+
+            <div class="form-group">
+
+                <label for="priority">
+                    Priority Level
+                </label>
+
+                <select id="priority" required>
+
+                    <option value="Normal">
+                        🟢 Normal
+                    </option>
+
+                    <option value="Urgent">
+                        🟠 Urgent
+                    </option>
+
+                    <option value="Emergency">
+                        🔴 Emergency
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <!-- SUBMIT -->
+
+            <button
+                type="submit"
+                class="submit-btn">
+
+                Generate Digital Token →
+
+            </button>
+
+
+            <p class="form-note">
+
+                By registering, the patient will be added
+                to the hospital queue.
+
+            </p>
+
+
+        </form>
+
+
+        <!-- TOKEN RESULT -->
+
+        <div
+            id="result"
+            class="token-result">
+
+        </div>
+
+
+        <!-- DASHBOARD BUTTON -->
+
+        <button
+            id="dashboardBtn"
+            class="dashboard-btn"
+            onclick="window.location.href='dashboard.html'">
+
+            View Live Queue
+
+        </button>
+
+    </section>
+
+</main>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer id="contact">
+
+    <div class="footer-container">
+
+
+        <div class="footer-brand">
+
+            <h2>
+                MediCare<span>+</span>
+            </h2>
+
+            <p>
+                Smart hospital queue management
+                for a better healthcare experience.
+            </p>
+
+        </div>
+
+
+        <div>
+
+            <h3>
+                Quick Links
+            </h3>
+
+            <a href="index.html">
+                Home
+            </a>
+
+            <a href="about.html">
+                About
+            </a>
+
+            <a href="doctor.html">
+                Doctors
+            </a>
+
+            <a href="dashboard.html">
+                Queue
+            </a>
+
+        </div>
+
+
+        <div>
+
+            <h3>
+                Contact
+            </h3>
+
+            <p>
+                📧 medicare@gmail.com
+            </p>
+
+            <p>
+                📞 +91 9876543210
+            </p>
+
+            <p>
+                📍 Coimbatore, Tamil Nadu
+            </p>
+
+        </div>
+
+
+    </div>
+
+
+    <div class="footer-bottom">
+
+        <p>
+            © 2026 MediCare+ | Smart Hospital Queue Management System
+        </p>
+
+    </div>
+
+</footer>
+
+
+<!-- TOAST -->
+
+<div id="toast"></div>
+
+
+<script src="js/script.js"></script>
+
+<script src="js/register.js"></script>
+
+</body>
+
+</html>

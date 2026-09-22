@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Live Queue Dashboard | MediCare+</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/animation.css">
+
+</head>
+
+<body>
+
+<!-- ================= NAVBAR ================= -->
+
+<header class="navbar">
+
+    <nav>
+
+        <div class="logo">
+
+            <div class="logo-icon">
+                +
+            </div>
+
+            <div>
+
+                <h2>
+                    MediCare<span>+</span>
+                </h2>
+
+                <small>
+                    Smart Healthcare
+                </small>
+
+            </div>
+
+        </div>
+
+
+        <ul class="nav-links">
+
+            <li>
+                <a href="index.html">
+                    Home
+                </a>
+            </li>
+
+            <li>
+                <a href="about.html">
+                    About
+                </a>
+            </li>
+
+            <li>
+                <a href="index.html#services">
+                    Services
+                </a>
+            </li>
+
+            <li>
+                <a href="doctor.html">
+                    Doctors
+                </a>
+            </li>
+
+            <li>
+                <a href="dashboard.html" class="active">
+                    Queue
+                </a>
+            </li>
+
+            <li>
+                <a href="index.html#contact">
+                    Contact
+                </a>
+            </li>
+
+        </ul>
+
+
+        <div class="nav-actions">
+
+            <button
+                id="themeToggle"
+                class="theme-btn">
+
+                🌙
+
+            </button>
+
+
+            <button
+                class="register-btn"
+                onclick="window.location.href='register.html'">
+
+                Register Patient
+
+            </button>
+
+        </div>
+
+    </nav>
+
+</header>
+
+
+<!-- ================= DASHBOARD ================= -->
+
+<main class="dashboard-page">
+
+
+    <!-- HEADER -->
+
+    <section class="dashboard-header">
+
+        <div>
+
+            <span class="hero-badge">
+                📊 Live Monitoring
+            </span>
+
+            <h1>
+                Queue Dashboard
+            </h1>
+
+            <p>
+                Monitor patient queues, waiting times
+                and current token status in real time.
+            </p>
+
+        </div>
+
+
+        <div class="dashboard-time">
+
+            <span>
+                Current Time
+            </span>
+
+            <strong id="clock">
+                Loading...
+            </strong>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= STAT CARDS ================= -->
+
+    <section class="dashboard-cards">
+
+
+        <div class="dashboard-card">
+
+            <div class="dashboard-card-icon">
+                👥
+            </div>
+
+            <div>
+
+                <p>
+                    Total Patients
+                </p>
+
+                <h2 id="totalPatients">
+                    0
+                </h2>
+
+            </div>
+
+        </div>
+
+
+        <div class="dashboard-card waiting-card">
+
+            <div class="dashboard-card-icon">
+                ⏳
+            </div>
+
+            <div>
+
+                <p>
+                    Waiting
+                </p>
+
+                <h2 id="waitingPatients">
+                    0
+                </h2>
+
+            </div>
+
+        </div>
+
+
+        <div class="dashboard-card completed-card">
+
+            <div class="dashboard-card-icon">
+                ✅
+            </div>
+
+            <div>
+
+                <p>
+                    Completed
+                </p>
+
+                <h2 id="completedPatients">
+                    0
+                </h2>
+
+            </div>
+
+        </div>
+
+
+        <div class="dashboard-card current-card">
+
+            <div class="dashboard-card-icon">
+                🎫
+            </div>
+
+            <div>
+
+                <p>
+                    Current Token
+                </p>
+
+                <h2 id="currentToken">
+                    None
+                </h2>
+
+            </div>
+
+        </div>
+
+
+    </section>
+
+
+    <!-- ================= CURRENT QUEUE ================= -->
+
+    <section class="queue-highlight">
+
+
+        <div class="current-patient">
+
+            <div class="current-icon">
+                🎟️
+            </div>
+
+            <div>
+
+                <span>
+                    NOW SERVING
+                </span>
+
+                <h2 id="currentTokenLarge">
+                    None
+                </h2>
+
+                <p>
+                    Please wait for your token to be called.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="queue-progress-box">
+
+            <div class="progress-header">
+
+                <span>
+                    Queue Progress
+                </span>
+
+                <strong id="progressText">
+                    0%
+                </strong>
+
+            </div>
+
+
+            <div class="progress">
+
+                <div id="progressBar">
+                </div>
+
+            </div>
+
+
+            <p id="queueMessage">
+                Queue is waiting for patients.
+            </p>
+
+        </div>
+
+
+    </section>
+
+
+    <!-- ================= CONTROLS ================= -->
+
+    <section class="queue-controls">
+
+
+        <div class="search-box">
+
+            <span>
+                🔍
+            </span>
+
+            <input
+                type="text"
+                id="searchInput"
+                placeholder="Search patient name...">
+
+        </div>
+
+
+        <select id="departmentFilter">
+
+            <option value="All">
+                All Departments
+            </option>
+
+            <option value="General">
+                General Medicine
+            </option>
+
+            <option value="ENT">
+                ENT
+            </option>
+
+            <option value="Dental">
+                Dental
+            </option>
+
+            <option value="Eye">
+                Ophthalmology
+            </option>
+
+            <option value="Cardiology">
+                Cardiology
+            </option>
+
+        </select>
+
+
+        <button
+            id="exportBtn"
+            class="secondary-action">
+
+            📥 Export CSV
+
+        </button>
+
+
+        <button
+            id="resetBtn"
+            class="danger-action">
+
+            🗑️ Reset Queue
+
+        </button>
+
+    </section>
+
+
+    <!-- ================= QUEUE TABLE ================= -->
+
+    <section class="queue-table-section">
+
+
+        <div class="table-header">
+
+            <div>
+
+                <span>
+                    PATIENT QUEUE
+                </span>
+
+                <h2>
+                    Live Queue Status
+                </h2>
+
+            </div>
+
+
+            <div class="live-indicator">
+
+                <span></span>
+
+                Live
+
+            </div>
+
+        </div>
+
+
+        <div class="table-wrapper">
+
+            <table>
+
+                <thead>
+
+                    <tr>
+
+                        <th>
+                            Token
+                        </th>
+
+                        <th>
+                            Patient
+                        </th>
+
+                        <th>
+                            Age
+                        </th>
+
+                        <th>
+                            Department
+                        </th>
+
+                        <th>
+                            Waiting Time
+                        </th>
+
+                        <th>
+                            Status
+                        </th>
+
+                    </tr>
+
+                </thead>
+
+
+                <tbody id="patientTable">
+
+                    <!-- JavaScript will insert patients here -->
+
+                </tbody>
+
+            </table>
+
+
+            <!-- EMPTY STATE -->
+
+            <div
+                id="emptyQueue"
+                class="empty-queue">
+
+                <div>
+                    📋
+                </div>
+
+                <h3>
+                    No patients in queue
+                </h3>
+
+                <p>
+                    Registered patients will appear here.
+                </p>
+
+                <button
+                    class="primary-btn"
+                    onclick="window.location.href='register.html'">
+
+                    Register Patient
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= ESTIMATED WAIT ================= -->
+
+    <section class="waiting-info">
+
+
+        <div class="waiting-info-icon">
+            ⏱️
+        </div>
+
+
+        <div>
+
+            <span>
+                ESTIMATED WAITING TIME
+            </span>
+
+            <h2 id="estimatedWait">
+                0 minutes
+            </h2>
+
+            <p>
+                Estimated based on the current number
+                of patients waiting in the queue.
+            </p>
+
+        </div>
+
+    </section>
+
+
+</main>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer id="contact">
+
+    <div class="footer-container">
+
+
+        <div class="footer-brand">
+
+            <h2>
+                MediCare<span>+</span>
+            </h2>
+
+            <p>
+                Smart hospital queue management
+                for a better healthcare experience.
+            </p>
+
+        </div>
+
+
+        <div>
+
+            <h3>
+                Quick Links
+            </h3>
+
+            <a href="index.html">
+                Home
+            </a>
+
+            <a href="about.html">
+                About
+            </a>
+
+            <a href="doctor.html">
+                Doctors
+            </a>
+
+            <a href="dashboard.html">
+                Queue
+            </a>
+
+        </div>
+
+
+        <div>
+
+            <h3>
+                Services
+            </h3>
+
+            <a href="register.html">
+                Patient Registration
+            </a>
+
+            <a href="dashboard.html">
+                Live Queue
+            </a>
+
+            <a href="doctor.html">
+                Doctor Availability
+            </a>
+
+        </div>
+
+
+        <div>
+
+            <h3>
+                Contact
+            </h3>
+
+            <p>
+                📧 medicare@gmail.com
+            </p>
+
+            <p>
+                📞 +91 9876543210
+            </p>
+
+            <p>
+                📍 Coimbatore, Tamil Nadu
+            </p>
+
+        </div>
+
+
+    </div>
+
+
+    <div class="footer-bottom">
+
+        <p>
+            © 2026 MediCare+ | Smart Hospital Queue Management System
+        </p>
+
+    </div>
+
+</footer>
+
+
+<!-- ================= TOAST ================= -->
+
+<div id="toast"></div>
+
+
+<script src="js/script.js"></script>
+
+<script src="js/dashboard.js"></script>
+
+</body>
+
+</html>

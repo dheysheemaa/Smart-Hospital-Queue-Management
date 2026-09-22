@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doctor Panel</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="doctor-panel">
+    <h1>Doctor Panel</h1>
+    <div class="doctor-controls">
+    <h2>Current Token : <span id="currentToken">None</span></h2>
+    <button onclick="callNext()">Call Next</button>
+</div>
+    <table>
+        <thead>
+            <tr>
+                <th>Token</th>
+                <th>Name</th>
+                <th>Department</th>
+                <th>Waiting Time</th>
+                <th>Status</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody id="doctorTable">
+        </tbody>
+    </table>
+</div>
+<script src="js/doctor.js"></script>
+<script src="js/script.js"></script>
+</body>
+</html>
