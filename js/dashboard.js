@@ -95,6 +95,13 @@ function loadDashboard() {
         currentToken.textContent =
             current ? current.token : "None";
     }
+    const currentTokenDisplay =
+    document.getElementById("currentTokenDisplay");
+
+    if (currentTokenDisplay) {
+    currentTokenDisplay.textContent =
+        current ? current.token : "—";
+    }
 
 
     /* =========================
