@@ -2,21 +2,21 @@
 <html lang="en">
 
 <head>
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Doctors | MediCare+</title>
+    <title>Our Doctors | MediCare+</title>
 
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/responsive.css">
     <link rel="stylesheet" href="css/animation.css">
-
 </head>
 
 <body>
 
-    <!-- ================= NAVBAR ================= -->
+    <!-- =========================
+         NAVBAR
+    ========================== -->
 
     <header class="navbar">
 
@@ -24,18 +24,11 @@
 
             <div class="logo">
 
-                <div class="logo-icon">
-                    +
-                </div>
+                <div class="logo-icon">+</div>
 
                 <div>
-                    <h2>
-                        MediCare<span>+</span>
-                    </h2>
-
-                    <small>
-                        Smart Healthcare
-                    </small>
+                    <h2>MediCare<span>+</span></h2>
+                    <small>Smart Healthcare</small>
                 </div>
 
             </div>
@@ -44,21 +37,15 @@
             <ul class="nav-links">
 
                 <li>
-                    <a href="index.html">
-                        Home
-                    </a>
+                    <a href="index.html">Home</a>
                 </li>
 
                 <li>
-                    <a href="about.html">
-                        About
-                    </a>
+                    <a href="about.html">About</a>
                 </li>
 
                 <li>
-                    <a href="index.html#services">
-                        Services
-                    </a>
+                    <a href="index.html#services">Services</a>
                 </li>
 
                 <li>
@@ -68,15 +55,11 @@
                 </li>
 
                 <li>
-                    <a href="dashboard.html">
-                        Queue
-                    </a>
+                    <a href="dashboard.html">Queue</a>
                 </li>
 
                 <li>
-                    <a href="index.html#contact">
-                        Contact
-                    </a>
+                    <a href="index.html#contact">Contact</a>
                 </li>
 
             </ul>
@@ -86,18 +69,15 @@
 
                 <button
                     id="themeToggle"
-                    class="theme-btn">
-
+                    class="theme-btn"
+                    aria-label="Toggle dark mode">
                     🌙
-
                 </button>
 
                 <button
                     class="register-btn"
                     onclick="window.location.href='register.html'">
-
                     Register Patient
-
                 </button>
 
             </div>
@@ -107,29 +87,29 @@
     </header>
 
 
-    <!-- ================= MAIN ================= -->
+
+    <!-- =========================
+         DOCTOR HERO
+    ========================== -->
 
     <main>
 
+        <section class="doctor-hero">
 
-        <!-- ================= HERO ================= -->
-
-        <section class="doctors-hero">
-
-            <div class="doctors-hero-content">
+            <div class="doctor-hero-content">
 
                 <span class="hero-badge">
-                    👨‍⚕️ Medical Specialists
+                    👨‍⚕️ Our Medical Team
                 </span>
 
                 <h1>
-                    Meet our <span>doctors.</span>
+                    Meet our
+                    <span>doctors.</span>
                 </h1>
 
                 <p>
-                    Find experienced healthcare professionals
-                    across multiple departments and choose
-                    the right care for your needs.
+                    Explore our medical specialists and check
+                    their department and current availability.
                 </p>
 
             </div>
@@ -137,504 +117,263 @@
         </section>
 
 
-        <!-- ================= DOCTORS ================= -->
 
-        <section class="section doctors-section">
+        <!-- =========================
+             DOCTOR STATS
+        ========================== -->
+
+        <section class="doctor-stats">
+
+            <div class="doctor-stat-card">
+
+                <div class="stat-icon blue">
+                    👨‍⚕️
+                </div>
+
+                <div>
+                    <span>Our Doctors</span>
+
+                    <h2 id="doctorCount">
+                        0+
+                    </h2>
+
+                    <small>
+                        Medical specialists
+                    </small>
+                </div>
+
+            </div>
+
+
+            <div class="doctor-stat-card">
+
+                <div class="stat-icon green">
+                    🟢
+                </div>
+
+                <div>
+                    <span>Available Now</span>
+
+                    <h2 id="availableDoctorCount">
+                        0
+                    </h2>
+
+                    <small>
+                        Currently available
+                    </small>
+                </div>
+
+            </div>
+
+
+            <div class="doctor-stat-card">
+
+                <div class="stat-icon purple">
+                    🏥
+                </div>
+
+                <div>
+                    <span>Departments</span>
+
+                    <h2>
+                        5
+                    </h2>
+
+                    <small>
+                        Medical departments
+                    </small>
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================
+             DOCTOR DIRECTORY
+        ========================== -->
+
+        <section class="section doctor-section">
 
             <div class="section-heading">
 
-                <span>
-                    OUR MEDICAL TEAM
-                </span>
+                <span>MEDICAL SPECIALISTS</span>
 
                 <h2>
-                    Experienced doctors, <span>better care.</span>
+                    Find the right
+                    <span>doctor.</span>
                 </h2>
 
                 <p>
-                    Our medical team is organized by department
-                    to make it easier for patients to find the
-                    right specialist.
+                    Browse doctors by department and check
+                    their current availability.
                 </p>
 
             </div>
 
 
-            <!-- ================= FILTERS ================= -->
 
-            <div class="doctor-filters">
+            <!-- FILTER -->
 
-                <button
-                    class="doctor-filter active"
-                    data-department="All">
+            <div class="doctor-filter">
 
-                    All Doctors
+                <label for="doctorFilter">
+                    Filter by Department
+                </label>
 
-                </button>
+                <select id="doctorFilter">
 
-                <button
-                    class="doctor-filter"
-                    data-department="General">
+                    <option value="All">
+                        All Departments
+                    </option>
 
-                    General Medicine
+                    <option value="General Medicine">
+                        General Medicine
+                    </option>
 
-                </button>
+                    <option value="ENT">
+                        ENT
+                    </option>
 
-                <button
-                    class="doctor-filter"
-                    data-department="ENT">
+                    <option value="Dental">
+                        Dental
+                    </option>
 
-                    ENT
+                    <option value="Eye">
+                        Ophthalmology
+                    </option>
 
-                </button>
+                    <option value="Cardiology">
+                        Cardiology
+                    </option>
 
-                <button
-                    class="doctor-filter"
-                    data-department="Dental">
-
-                    Dental
-
-                </button>
-
-                <button
-                    class="doctor-filter"
-                    data-department="Eye">
-
-                    Ophthalmology
-
-                </button>
-
-                <button
-                    class="doctor-filter"
-                    data-department="Cardiology">
-
-                    Cardiology
-
-                </button>
+                </select>
 
             </div>
 
 
-            <!-- ================= DOCTOR GRID ================= -->
+
+            <!-- =========================
+                 DOCTOR CARDS
+            ========================== -->
 
             <div
-                class="doctor-grid"
-                id="doctorGrid">
+                id="doctorContainer"
+                class="doctor-grid">
 
-
-                <!-- DOCTOR 1 -->
-
-                <div
-                    class="doctor-card"
-                    data-department="General">
-
-                    <div class="doctor-image">
-
-                        <img
-                            src="assets/doctor.png"
-                            alt="Doctor">
-
-                        <span class="doctor-status">
-                            ● Available
-                        </span>
-
-                    </div>
-
-
-                    <div class="doctor-info">
-
-                        <span class="doctor-department">
-                            General Medicine
-                        </span>
-
-                        <h3>
-                            Dr. Arun Kumar
-                        </h3>
-
-                        <p class="doctor-specialization">
-                            MBBS, MD
-                        </p>
-
-                        <p>
-                            General physician specializing in
-                            preventive care and common medical
-                            conditions.
-                        </p>
-
-
-                        <div class="doctor-meta">
-
-                            <span>
-                                🕐 9:00 AM - 1:00 PM
-                            </span>
-
-                            <span>
-                                🎫 Queue Available
-                            </span>
-
-                        </div>
-
-
-                        <button
-                            class="doctor-btn"
-                            onclick="window.location.href='register.html'">
-
-                            Register for Consultation →
-
-                        </button>
-
-                    </div>
-
-                </div>
-
-
-                <!-- DOCTOR 2 -->
-
-                <div
-                    class="doctor-card"
-                    data-department="ENT">
-
-                    <div class="doctor-image">
-
-                        <img
-                            src="assets/doctor.png"
-                            alt="Doctor">
-
-                        <span class="doctor-status">
-                            ● Available
-                        </span>
-
-                    </div>
-
-
-                    <div class="doctor-info">
-
-                        <span class="doctor-department">
-                            ENT
-                        </span>
-
-                        <h3>
-                            Dr. Priya Sharma
-                        </h3>
-
-                        <p class="doctor-specialization">
-                            MBBS, MS ENT
-                        </p>
-
-                        <p>
-                            Specialist in ear, nose and throat
-                            related diagnosis and treatment.
-                        </p>
-
-
-                        <div class="doctor-meta">
-
-                            <span>
-                                🕐 10:00 AM - 2:00 PM
-                            </span>
-
-                            <span>
-                                🎫 Queue Available
-                            </span>
-
-                        </div>
-
-
-                        <button
-                            class="doctor-btn"
-                            onclick="window.location.href='register.html'">
-
-                            Register for Consultation →
-
-                        </button>
-
-                    </div>
-
-                </div>
-
-
-                <!-- DOCTOR 3 -->
-
-                <div
-                    class="doctor-card"
-                    data-department="Dental">
-
-                    <div class="doctor-image">
-
-                        <img
-                            src="assets/doctor.png"
-                            alt="Doctor">
-
-                        <span class="doctor-status">
-                            ● Available
-                        </span>
-
-                    </div>
-
-
-                    <div class="doctor-info">
-
-                        <span class="doctor-department">
-                            Dental
-                        </span>
-
-                        <h3>
-                            Dr. Karthik Raj
-                        </h3>
-
-                        <p class="doctor-specialization">
-                            BDS, MDS
-                        </p>
-
-                        <p>
-                            Dental specialist providing
-                            preventive and restorative dental care.
-                        </p>
-
-
-                        <div class="doctor-meta">
-
-                            <span>
-                                🕐 9:30 AM - 1:30 PM
-                            </span>
-
-                            <span>
-                                🎫 Queue Available
-                            </span>
-
-                        </div>
-
-
-                        <button
-                            class="doctor-btn"
-                            onclick="window.location.href='register.html'">
-
-                            Register for Consultation →
-
-                        </button>
-
-                    </div>
-
-                </div>
-
-
-                <!-- DOCTOR 4 -->
-
-                <div
-                    class="doctor-card"
-                    data-department="Eye">
-
-                    <div class="doctor-image">
-
-                        <img
-                            src="assets/doctor.png"
-                            alt="Doctor">
-
-                        <span class="doctor-status">
-                            ● Available
-                        </span>
-
-                    </div>
-
-
-                    <div class="doctor-info">
-
-                        <span class="doctor-department">
-                            Ophthalmology
-                        </span>
-
-                        <h3>
-                            Dr. Meena Devi
-                        </h3>
-
-                        <p class="doctor-specialization">
-                            MBBS, MS Ophthalmology
-                        </p>
-
-                        <p>
-                            Eye care specialist focused on
-                            vision assessment and eye disorders.
-                        </p>
-
-
-                        <div class="doctor-meta">
-
-                            <span>
-                                🕐 11:00 AM - 3:00 PM
-                            </span>
-
-                            <span>
-                                🎫 Queue Available
-                            </span>
-
-                        </div>
-
-
-                        <button
-                            class="doctor-btn"
-                            onclick="window.location.href='register.html'">
-
-                            Register for Consultation →
-
-                        </button>
-
-                    </div>
-
-                </div>
-
-
-                <!-- DOCTOR 5 -->
-
-                <div
-                    class="doctor-card"
-                    data-department="Cardiology">
-
-                    <div class="doctor-image">
-
-                        <img
-                            src="assets/doctor.png"
-                            alt="Doctor">
-
-                        <span class="doctor-status">
-                            ● Available
-                        </span>
-
-                    </div>
-
-
-                    <div class="doctor-info">
-
-                        <span class="doctor-department">
-                            Cardiology
-                        </span>
-
-                        <h3>
-                            Dr. Rahul Menon
-                        </h3>
-
-                        <p class="doctor-specialization">
-                            MBBS, MD, DM Cardiology
-                        </p>
-
-                        <p>
-                            Cardiology specialist focusing on
-                            heart health and cardiovascular care.
-                        </p>
-
-
-                        <div class="doctor-meta">
-
-                            <span>
-                                🕐 9:00 AM - 12:00 PM
-                            </span>
-
-                            <span>
-                                🎫 Queue Available
-                            </span>
-
-                        </div>
-
-
-                        <button
-                            class="doctor-btn"
-                            onclick="window.location.href='register.html'">
-
-                            Register for Consultation →
-
-                        </button>
-
-                    </div>
-
-                </div>
-
-
-                <!-- DOCTOR 6 -->
-
-                <div
-                    class="doctor-card"
-                    data-department="General">
-
-                    <div class="doctor-image">
-
-                        <img
-                            src="assets/doctor.png"
-                            alt="Doctor">
-
-                        <span class="doctor-status">
-                            ● Available
-                        </span>
-
-                    </div>
-
-
-                    <div class="doctor-info">
-
-                        <span class="doctor-department">
-                            General Medicine
-                        </span>
-
-                        <h3>
-                            Dr. Sneha Ramesh
-                        </h3>
-
-                        <p class="doctor-specialization">
-                            MBBS, MD
-                        </p>
-
-                        <p>
-                            General medicine specialist focused
-                            on patient-centred primary healthcare.
-                        </p>
-
-
-                        <div class="doctor-meta">
-
-                            <span>
-                                🕐 2:00 PM - 6:00 PM
-                            </span>
-
-                            <span>
-                                🎫 Queue Available
-                            </span>
-
-                        </div>
-
-
-                        <button
-                            class="doctor-btn"
-                            onclick="window.location.href='register.html'">
-
-                            Register for Consultation →
-
-                        </button>
-
-                    </div>
-
-                </div>
-
+                <!-- Doctor cards will be generated by doctor.js -->
 
             </div>
 
         </section>
 
 
-        <!-- ================= CTA ================= -->
+
+        <!-- =========================
+             DOCTOR INFORMATION
+        ========================== -->
+
+        <section class="section doctor-info-section">
+
+            <div class="section-heading">
+
+                <span>DOCTOR AVAILABILITY</span>
+
+                <h2>
+                    Plan your visit
+                    <span>better.</span>
+                </h2>
+
+                <p>
+                    Check doctor availability before visiting
+                    the hospital and use the queue system to
+                    manage your waiting time.
+                </p>
+
+            </div>
+
+
+            <div class="doctor-info-grid">
+
+                <div class="doctor-info-card">
+
+                    <div class="info-icon">
+                        🟢
+                    </div>
+
+                    <h3>
+                        Available
+                    </h3>
+
+                    <p>
+                        The doctor is currently available
+                        for consultation.
+                    </p>
+
+                </div>
+
+
+                <div class="doctor-info-card">
+
+                    <div class="info-icon">
+                        🟠
+                    </div>
+
+                    <h3>
+                        Busy
+                    </h3>
+
+                    <p>
+                        The doctor is currently occupied
+                        with another consultation.
+                    </p>
+
+                </div>
+
+
+                <div class="doctor-info-card">
+
+                    <div class="info-icon">
+                        🎟️
+                    </div>
+
+                    <h3>
+                        Get Your Token
+                    </h3>
+
+                    <p>
+                        Register a patient to receive a
+                        digital queue token.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================
+             CTA
+        ========================== -->
 
         <section class="cta-section">
 
             <div>
 
                 <span>
-                    NEED MEDICAL CONSULTATION?
+                    READY TO GET STARTED?
                 </span>
 
                 <h2>
-                    Get your digital token today.
+                    Register and join the queue.
                 </h2>
 
                 <p>
-                    Register your details and join the hospital
-                    queue without waiting in a long line.
+                    Get a digital token and track your
+                    hospital queue easily.
                 </p>
 
             </div>
@@ -653,12 +392,14 @@
     </main>
 
 
-    <!-- ================= FOOTER ================= -->
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
 
     <footer id="contact">
 
         <div class="footer-container">
-
 
             <div class="footer-brand">
 
@@ -667,8 +408,8 @@
                 </h2>
 
                 <p>
-                    Smart hospital queue management
-                    for a better healthcare experience.
+                    Smart hospital queue management for a
+                    better healthcare experience.
                 </p>
 
             </div>
@@ -740,14 +481,14 @@
 
             </div>
 
-
         </div>
 
 
         <div class="footer-bottom">
 
             <p>
-                © 2026 MediCare+ | Smart Hospital Queue Management System
+                © 2026 MediCare+ | Smart Hospital Queue
+                Management System
             </p>
 
         </div>
@@ -755,10 +496,14 @@
     </footer>
 
 
-    <!-- ================= TOAST ================= -->
+
+    <!-- TOAST -->
 
     <div id="toast"></div>
 
+
+
+    <!-- JAVASCRIPT -->
 
     <script src="js/script.js"></script>
     <script src="js/doctor.js"></script>
